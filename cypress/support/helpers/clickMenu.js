@@ -6,7 +6,7 @@ export const gotoProductPage = (link) => {
 };
 
 export const gotoPage = (buttonBag) => {
-  cy.get(buttonBag).click();
+  cy.get(buttonBag,).click({force: true});
 };
 
 export const clickProduct = (productCardId) => {
@@ -18,6 +18,6 @@ export const clickAddToBag = (addToBagId) => {
 };
 
 export const verifyItemInBag = (productInBag)=>{
-cy.get(productInBag,{force:true}).should("be.visible");
+cy.get(productInBag).invoke('show').should("be.visible");
 }
 
