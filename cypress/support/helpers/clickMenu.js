@@ -10,7 +10,7 @@ export const gotoPage = (buttonBag) => {
 };
 
 export const clickProduct = (productCardId) => {
-  cy.get(productCardId).eq(0).click();
+  cy.get(productCardId).eq(0).should("be.visible").click();
 };
 
 export const clickAddToBag = (addToBagId) => {
